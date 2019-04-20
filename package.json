@@ -4,7 +4,7 @@
   "description": "game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Momijiichigo/TrashPickup/issues"
   },
-  "homepage": "https://github.com/Momijiichigo/TrashPickup#readme"
+  "homepage": "https://github.com/Momijiichigo/TrashPickup#readme",
+  "devDependencies": {
+    "electron": "^4.1.4"
+  }
 }
