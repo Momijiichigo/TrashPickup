@@ -9,11 +9,13 @@ function init() {
 }
 
 function draw() {
-  var ctx = document.getElementById('canvas').getContext('2d');
+  let canvas = document.getElementById('canvas')
+  var ctx = canvas.getContext('2d');
 
   ctx.globalCompositeOperation = 'destination-over';
-  ctx.width=innerWidth;
-  ctx.height=innerHeight;
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
+
   ctx.clearRect(0, 0, 300, 300); // clear canvas
 
   ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
