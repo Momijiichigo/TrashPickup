@@ -65,19 +65,23 @@ let TrashCan = {
 }
 
 function incrementScore(){
-  if (Trash.y == TrashCan.y){
-    if (Math.abs(Trash.x - TrashCan.x) < 100){
-      score += 1;
+  for(let a=0;a<trash.length;a++){
+    if (trash[a].y < TrashCan.y){
+      if (Math.abs(trash[a].x - TrashCan.x) < 100){
+        score += 1;
+      }
+      else{
+        lives -=1;
+      }
     }
-    else{
-      lives -=1;
+    if (lives == 0){
+      gameOver();
     }
-  }
-  if (lives == 0){
-    gameOver();
   }
 }
-
+let gameOver = () =>{
+  
+}
 window.requestAnimationFrame(draw);
 function draw() {
   move();
