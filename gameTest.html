@@ -1,4 +1,5 @@
 <img src="img/trash.png" id="test">
+<link rel="stylesheet" type="text/css" href="gameTest.css">
 <script src="js/lib.js"></script>
 <script>
 
@@ -6,7 +7,7 @@ let testObj=document.getElementById("test");
 testObj.style.position="absolute"
 let Trash = {
   x: 0,
-  y: innerHeight-500
+  y: innerHeight-100
 }
 window.requestAnimationFrame(draw);
 function draw() {
