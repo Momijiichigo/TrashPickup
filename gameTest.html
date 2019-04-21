@@ -72,8 +72,8 @@ let TrashCan = {
 
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
-    if (trashArray[a].y == TrashCan.y){
-      if (Math.abs(trash[a].x - TrashCan.x) < 50){
+    if (trashArray[a].y > TrashCan.y){
+      if (Math.abs(trash[a].x - TrashCan.x) < 500){
         score += 1;
       }
       else {
@@ -99,16 +99,14 @@ function draw() {
 }
 
 let move = () =>{
-  if(KeyIsDown("ArrowLeft")){
+  if(KeyIsDown("ArrowLeft")&&testObj.x>0){
     //do something
     TrashCan.x-=5;
   }
-  if(KeyIsDown("ArrowRight")){
+  if(KeyIsDown("ArrowRight")&&testObj.x<innerWidth){
     TrashCan.x+=5;
 
   }
-  if(testObj.x>innerWidth)testObj.x=innerWidth;
-  if(testObj.x<0)testObj.x=0;
   testObj.style.left=TrashCan.x+"px";
   testObj.style.top=TrashCan.y+"px";
 }
