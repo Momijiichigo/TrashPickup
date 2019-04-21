@@ -63,7 +63,7 @@ customElements.define('game-trash',
     }
     draw(self){
         if(self.y>innerHeight){
-          if(trashArray.length>1)trashArray.shift();
+          if(trashArray.length>1){trashArray.shift();document.body.removeChild(self);}
           
         }
         self.y+=this.speed;
@@ -92,6 +92,8 @@ function incrementScore(){
       else {
         lives -=1;
       }
+      document.body.removeChild(trashArray[a]);
+      trashArray.shift();
     }
     if (lives == 0){
       gameOver();
