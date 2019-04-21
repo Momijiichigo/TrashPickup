@@ -2,7 +2,12 @@
     width:100px;
     height:auto;
 }
-.trash{
+game-trash{
     width:100px;
     height:auto;
+}
+
+#Paper{
+width: 50px;
+height:auto;
 }
