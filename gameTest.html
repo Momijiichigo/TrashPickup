@@ -5,8 +5,8 @@
 let testObj=document.getElementById("test");
 testObj.style.position="absolute"
 let Trash = {
-  x: 0,
-  y: 0
+  x: 300,
+  y: 500,
 }
 window.requestAnimationFrame(draw);
 function draw() {
@@ -17,11 +17,11 @@ function draw() {
 let move=()=>{
   if(KeyIsDown("ArrowLeft")){
     //do something
-    Trash.x-=1;
+    Trash.x-=3;
     console.log("left")
   }
   if(KeyIsDown("ArrowRight")){
-    Trash.x+=1;
+    Trash.x+=3;
   }
   testObj.style.left=Trash.x+"px";
   testObj.style.top=Trash.y+"px";
