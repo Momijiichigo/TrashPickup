@@ -2,6 +2,7 @@ var sun = new Image();
 var moon = new Image();
 var earth = new Image();
 var trashCan = new Image();
+
 let Trash = {
   x: 0,
   y: 0

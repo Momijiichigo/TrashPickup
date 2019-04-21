@@ -20,8 +20,10 @@ class Trash extends HTMLImage​Element {
       this.src="img/paper_ball.png";
     } else if (typeNum == 2){
       this.type = "Styrofoam";
+      this.src = "img/styrofoam.png"
     } else if (typeNum == 3){
       this.type = "Plastic";
+      this.src = "img/plastic"
     }
   }
 }
@@ -29,6 +31,10 @@ class Trash extends HTMLImage​Element {
 let TrashCan = {
   x: 300,
   y: innerHeight-100
+}
+
+let ScoreCounter = {
+
 }
 
 /*
@@ -62,3 +68,5 @@ let produceTrash = () =>{
 }
 
 </script>
+
+
