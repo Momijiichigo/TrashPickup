@@ -16,13 +16,18 @@
       <img src="trash.jpg"  id = "trash">
         <div class = "button1">
           <a href="file:///Users/anikanicolas/Documents/TrashPickUp/TrashPickup/objective.html">
-          <input type="submit" value="StartGame" id="StartGame">
+          <input type="submit" value="StartGame" id="StartGame" onclick="javascript:start()">
       </div>
       <div class = "button2">
-        <input type="submit" value="MoreInfo" id="MoreInfo">
+        <input type="submit" value="MoreInfo" id="MoreInfo" onclick="javascript:moreInfo()">
     </div>
       <script>
-
+        function start(){
+          location.href="gameTest.html"
+        }
+        function moreInfo(){
+          location.href="TrashPickup.html"
+        }
       </script>
 
     <script src="js/game.js"></script>

@@ -4,7 +4,10 @@
 </head>
 <body>
 
-    <div id="gameover"></div>
+    <div id="gameover">
+      GAME OVER
+      <button id="restart" onclick="javascript:restart()">restart</button>
+    </div>
     <img src="img/trash.png" id="trashCan" height= "20" width="42">
 Score:<div id = "displayScore"></div>
 Lives:<div id = "displayLives"></div>
@@ -12,6 +15,10 @@ Lives:<div id = "displayLives"></div>
 <script src="js/lib.js"></script>
 
 <script>
+  let restart = ()=>{
+    location.href='gameTest.html';
+  }
+  let gameoverPopUp = document.getElementById("gameover");
 let trashArray = [];
 let displayScore = document.getElementById("displayScore");
 let displayLives = document.getElementById("displayLives");
@@ -27,6 +34,7 @@ customElements.define('game-trash',
     }
     connectedCallback(){
         this.class="trash";
+        this.speed=1;
         this.img = document.createElement("img");
         this.img.setAttribute('height', '100px');
         this.img.setAttribute('width', '100px');
@@ -55,10 +63,11 @@ customElements.define('game-trash',
     }
     draw(self){
         if(self.y>innerHeight){
-          document.body.removeChild(self);
-          trash.shift();
+          if(trashArray.length>1)trashArray.shift();
+          
         }
-        self.y+=5;
+        self.y+=this.speed;
+        self.speed+=0.5;
         self.style.top=self.y+"px";
         requestAnimationFrame(()=>{self.draw(self)});
     } 
@@ -74,7 +83,9 @@ let TrashCan = {
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
     if (Math.abs(trashArray[a].y - TrashCan.y) < 3){
+      console.log(trashArray)
       if (Math.abs(trashArray[a].x - TrashCan.x) < 100){
+        trashArray[a].style.visibility="hidden";
         score += 1;
       }
       else {
@@ -92,6 +103,8 @@ let gameOver = () =>{
   // red colored screen
   // Black Text says "Game Over"
   // Button to start the game over
+  gameoverPopUp.style.visibility="visible";
+  clearInterval(dropTrash);
 }
 
 window.requestAnimationFrame(draw);
@@ -106,11 +119,10 @@ function draw() {
 let move = () =>{
   if(KeyIsDown("ArrowLeft")&&testObj.x>0){
     //do something
-    TrashCan.x-=5;
+    TrashCan.x-=10;
   }
-  if(KeyIsDown("ArrowRight")&&testObj.x<innerWidth){
-    TrashCan.x+=5;
-
+  if(KeyIsDown("ArrowRight") && testObj.x < 1900){
+    TrashCan.x+=10;
   }
   testObj.style.left=TrashCan.x+"px";
   testObj.style.top=TrashCan.y+"px";

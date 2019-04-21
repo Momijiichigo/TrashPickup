@@ -1,8 +1,10 @@
 #trashCan {
+    z-index: 1;
     width:100px;
     height:auto;
 }
 game-trash{
+    z-index: 0;
     width:100px;
     height:auto;
 }
@@ -14,4 +16,6 @@ height:auto;
 #gameover {
     background:red;
     visibility: hidden;
+    font-size: 500%;
+    color: black;
 }
