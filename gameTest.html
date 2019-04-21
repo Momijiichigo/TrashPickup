@@ -1,5 +1,7 @@
 <img src="img/trash.png" id="test">
+<img src="img/paper_ball.png" id="styrofoam">
 <img src="img/paper_ball.png" id="paper">
+<img src="img/paper_ball.png" id="plastic">
 <link rel="stylesheet" type="text/css" href="gameTest.css">
 <script src="js/lib.js"></script>
 <script>
@@ -25,28 +27,31 @@ let TrashCan = {
   x: 300,
   y: innerHeight-100
 }
+
 /*
 let PaperBall = {
   x: Math.random() * 600,
   y: 0
 }
 */
+
 window.requestAnimationFrame(draw);
 function draw() {
   move();
+
   window.requestAnimationFrame(draw);
 }
 
 let move=()=>{
   if(KeyIsDown("ArrowLeft")){
     //do something
-    Trash.x-=5;
+    TrashCan.x-=5;
   }
   if(KeyIsDown("ArrowRight")){
-    Trash.x+=5;
+    TrashCan.x+=5;
   }
-  testObj.style.left=Trash.x+"px";
-  testObj.style.top=Trash.y+"px";
+  testObj.style.left=TrashCan.x+"px";
+  testObj.style.top=TrashCan.y+"px";
 }
 
 </script>
