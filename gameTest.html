@@ -5,9 +5,14 @@
 <img src="img/paper_ball.png" id="plastic">
 -->
 <link rel="stylesheet" type="text/css" href="gameTest.css">
+<div id = "displayScore"></div>
+</div>
 <script src="js/lib.js"></script>
 <script>
 
+let score = document.getElementById("displayScore");
+var score = 0;
+var lives = 3;
 let testObj=document.getElementById("trashCan");
 testObj.style.position="absolute"
 
@@ -54,28 +59,30 @@ let TrashCan = {
   y: innerHeight-100
 }
 
-let ScoreCounter = {
-
+function incrementScore(){
+  if (Trash.y == TrashCan.y){
+    if (Math.abs(Trash.x == TrashCan.x) < 10){
+      score += 1;
+    }
+    else if (Math.abs(Trash.x == TrashCan.x) > 10){
+      lives -=1;
+    }
+  }
+  if (lives == 0){
+    gameOver();
+  }
 }
-
-/*
-let PaperBall = {
-  x: Math.random() * 600,
-  y: 0
-}
-*/
 
 window.requestAnimationFrame(draw);
 function draw() {
   move();
-
+  displayScore.innerText(score);
   window.requestAnimationFrame(draw);
 }
 
 let move = () =>{
   if(KeyIsDown("ArrowLeft")){
     //do something
-    
     TrashCan.x-=5;
   }
   if(KeyIsDown("ArrowRight")){
