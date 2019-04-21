@@ -1,4 +1,4 @@
-<img src="img/trash.png" id="test">
+<img src="img/trash.png" id="trashCan">
 <!--
 <img src="img/paper_ball.png" id="styrofoam">
 <img src="img/paper_ball.png" id="paper">
@@ -8,9 +8,9 @@
 <script src="js/lib.js"></script>
 <script>
 
-let testObj=document.getElementById("trash");
+let testObj=document.getElementById("trashCan");
 testObj.style.position="absolute"
-class Trash extends HTMLImage​Element {
+class Trash extends HTMLImageElement {
   constructor(x,type){
     this.style.position="absolute";
     this.style.left=x+"px";
@@ -51,9 +51,10 @@ function draw() {
   window.requestAnimationFrame(draw);
 }
 
-let move=()=>{
+let move = () =>{
   if(KeyIsDown("ArrowLeft")){
     //do something
+    
     TrashCan.x-=5;
   }
   if(KeyIsDown("ArrowRight")){
