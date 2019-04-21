@@ -1,0 +1,27 @@
+h1{
+  text-align: center;
+  font-size: 70px;
+}
+body{
+  font-size: 50px;
+}
+.button1{
+  position: absolute;
+  left: 550px;
+  top: 650px;
+  position: center;
+}
+#StartGame:hover {background: #eee;}
+#StartGame{
+  width: 150px;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 45px;
+  color: green;
+  padding: 10px;
+  border: none;
+  background-color: inherit;
+  padding: 10px 5px;
+  font-size: 27px;
+  cursor: pointer;
+  display: inline-bl
+}

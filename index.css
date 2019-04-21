@@ -1,11 +1,22 @@
+title{
+  text-align: center;
+}
 body{
   background-color: #66CDAA;
 }
-#Objective{
-  color: red;
+h1{
+  text-align: center;
+  color: #f44277;
+  font-size: 70px;
+  font-family: 'Changa', sans-serif;
+}
+#Purpose{
+  color: #f4424e;
+  font-size: 30px;
+  font-family: 'Changa', sans-serif;
 }
 #trash{
-  position: center;
+  position: relative;
   width: 50%;
   height:50%;
 }
@@ -13,6 +24,7 @@ body{
   position: absolute;
   left: 800px;
   top: 255px;
+  position: center;
 }
 #StartGame:hover {background: #eee;}
 #StartGame{
@@ -32,6 +44,7 @@ body{
   position: absolute;
   left: 800px;
   top: 400px;
+  position: center;
 }
 #MoreInfo:hover {background: #eee;}
 #MoreInfo{
