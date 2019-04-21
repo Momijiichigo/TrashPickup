@@ -70,7 +70,7 @@ customElements.define('game-trash',
         self.speed+=0.5;
         self.style.top=self.y+"px";
         requestAnimationFrame(()=>{self.draw(self)});
-    } 
+    }
 })
 let dropTrash = setInterval(function(){
   produceTrash();
@@ -82,11 +82,8 @@ let TrashCan = {
 
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
-    //console.log(trashArray[a])
-    if (Math.abs(trashArray[a].y - TrashCan.y) < 3){
-      console.log(trashArray)
-      if (Math.abs(trashArray[a].x - TrashCan.x) < 100){
-        trashArray[a].style.visibility="hidden";
+    if (trashArray[a].y > TrashCan.y){
+      if (Math.abs(trash[a].x - TrashCan.x) < 500){
         score += 1;
       }
       else {
@@ -102,12 +99,7 @@ function incrementScore(){
 }
 
 let gameOver = () =>{
-  // Redirect to new screen
-  // red colored screen
-  // Black Text says "Game Over"
-  // Button to start the game over
-  gameoverPopUp.style.visibility="visible";
-  clearInterval(dropTrash);
+document.getElementById("displayScore").innerHTML = "Your score is: " + score;
 }
 
 window.requestAnimationFrame(draw);
@@ -124,8 +116,9 @@ let move = () =>{
     //do something
     TrashCan.x-=10;
   }
-  if(KeyIsDown("ArrowRight") && testObj.x < 1900){
-    TrashCan.x+=10;
+  if(KeyIsDown("ArrowRight")&&testObj.x<innerWidth){
+    TrashCan.x+=5;
+
   }
   testObj.style.left=TrashCan.x+"px";
   testObj.style.top=TrashCan.y+"px";
@@ -134,5 +127,11 @@ let produceTrash = () =>{
     trashArray.push(document.body.appendChild(document.createElement("game-trash")));
 }
 </script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
 </body>
+>>>>>>> 416f530448a4aa4bc7935678f31364b0aca084aa
 </html>
+>>>>>>> 649a0fac1472efa6567b168aa2717004c0710d69
