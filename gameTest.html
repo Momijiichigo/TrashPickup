@@ -33,8 +33,9 @@ customElements.define('game-trash',
         this.img.setAttribute('width', '100px');
 
         this.y=0;
+        this.x= Math.random()*600;
         this.style.position="absolute";
-        this.style.left=(Math.random()*600)+"px";
+        this.style.left= this.x +"px";
         this.style.top="0px";
         this.typeNum = Math.ceil(Math.random()*3);
         if (this.typeNum == 1){
@@ -74,7 +75,7 @@ let TrashCan = {
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
     if (Math.abs(trashArray[a].y - TrashCan.y) < 3){
-      if (Math.abs(trashArray[a].x - TrashCan.x) < 500){
+      if (Math.abs(trashArray[a].x - TrashCan.x) < 100){
         score += 1;
       }
       else {
@@ -88,7 +89,10 @@ function incrementScore(){
 }
 
 let gameOver = () =>{
-
+  // Redirect to new screen
+  // red colored screen
+  // Black Text says "Game Over"
+  // Button to start the game over
 }
 
 window.requestAnimationFrame(draw);
