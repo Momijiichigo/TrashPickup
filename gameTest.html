@@ -10,28 +10,11 @@
 
 let testObj=document.getElementById("trashCan");
 testObj.style.position="absolute"
-<<<<<<< HEAD
 
 customElements.define('game-trash',
   class extends HTMLElement {
     constructor() {
       super();
-=======
-class Trash extends HTMLImageElement {
-  constructor(x,type){
-    this.style.position="absolute";
-    this.style.left=x+"px";
-    this.style.top="0px";
-    if (typeNum == 1){
-      this.type = "Paper";
-      this.src="img/paper_ball.png";
-    } else if (typeNum == 2){
-      this.type = "Styrofoam";
-      this.src = "img/styrofoam.png"
-    } else if (typeNum == 3){
-      this.type = "Plastic";
-      this.src = "img/plastic"
->>>>>>> da97e96bd0fbd1bcbd638baf33b2df88db6587e9
     }
     connectedCallback(){
         this.img = document.createElement("img");
