@@ -1,15 +1,19 @@
-<img src="img/trash.png" id="trashCan" height= "20" width="42">
-<!--
-<img src="img/paper_ball.png" id="styrofoam">
-<img src="img/paper_ball.png" id="paper">
-<img src="img/paper_ball.png" id="plastic">
--->
+<html>
+
+  <img src="img/trash.png" id="trashCan" height= "20" width="42">
+  <!--
+  <img src="img/paper_ball.png" id="styrofoam">
+  <img src="img/paper_ball.png" id="paper">
+  <img src="img/paper_ball.png" id="plastic">
+  -->
 <link rel="stylesheet" type="text/css" href="gameTest.css">
 score:<div id = "displayScore"></div>
 </div>
+
 <script src="js/lib.js"></script>
+
 <script>
-let trash = [];
+let trashArray = [];
 let displayScore = document.getElementById("displayScore");
 var score = 0;
 var lives = 3;
@@ -45,7 +49,7 @@ customElements.define('game-trash',
         this.appendChild(this.img);
         //document.body.appendChild(this);
         requestAnimationFrame(() => {
-                this.draw(this);
+          this.draw(this);
         });
     }
     draw(self){
@@ -67,12 +71,12 @@ let TrashCan = {
 }
 
 function incrementScore(){
-  for(let a=0;a<trash.length;a++){
-    if (trash[a].y > TrashCan.y){
-      if (Math.abs(trash[a].x - TrashCan.x) < 100){
+  for(let a=0;a < trashArray.length;a++){
+    if (trashArray[a].y == TrashCan.y){
+      if (Math.abs(trash[a].x - TrashCan.x) < 50){
         score += 1;
       }
-      else{
+      else {
         lives -=1;
       }
     }
@@ -81,6 +85,7 @@ function incrementScore(){
     }
   }
 }
+
 let gameOver = () =>{
 
 }
@@ -108,7 +113,7 @@ let move = () =>{
   testObj.style.top=TrashCan.y+"px";
 }
 let produceTrash = () =>{
-    trash.push(document.body.appendChild(document.createElement("game-trash")));
-
+    trashArray.push(document.body.appendChild(document.createElement("game-trash")));
 }
 </script>
+</html>
