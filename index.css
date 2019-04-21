@@ -1,0 +1,49 @@
+body{
+  background-color: #66CDAA;
+}
+#Objective{
+  color: red;
+}
+#trash{
+  position: center;
+  width: 50%;
+  height:50%;
+}
+.button1{
+  position: absolute;
+  left: 800px;
+  top: 255px;
+}
+#StartGame:hover {background: #eee;}
+#StartGame{
+  width: 150px;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 45px;
+  color: green;
+  padding: 10px;
+  border: none;
+  background-color: inherit;
+  padding: 10px 5px;
+  font-size: 27px;
+  cursor: pointer;
+  display: inline-bl
+}
+.button2{
+  position: absolute;
+  left: 800px;
+  top: 400px;
+}
+#MoreInfo:hover {background: #eee;}
+#MoreInfo{
+  width: 150px;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 45px;
+  color: green;
+  padding: 10px;
+  border: none;
+  background-color: inherit;
+  padding: 10px 5px;
+  font-size: 27px;
+  cursor: pointer;
+  display: inline-bl
+}
