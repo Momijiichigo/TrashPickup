@@ -1,12 +1,11 @@
 <html>
-
-  <img src="img/trash.png" id="trashCan" height= "20" width="42">
-  <!--
-  <img src="img/paper_ball.png" id="styrofoam">
-  <img src="img/paper_ball.png" id="paper">
-  <img src="img/paper_ball.png" id="plastic">
-  -->
+  <head>
 <link rel="stylesheet" type="text/css" href="gameTest.css">
+</head>
+<body>
+
+    <div id="gameover"></div>
+    <img src="img/trash.png" id="trashCan" height= "20" width="42">
 Score:<div id = "displayScore"></div>
 Lives:<div id = "displayLives"></div>
 
@@ -120,4 +119,5 @@ let produceTrash = () =>{
     trashArray.push(document.body.appendChild(document.createElement("game-trash")));
 }
 </script>
+</body>
 </html>

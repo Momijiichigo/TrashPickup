@@ -11,3 +11,7 @@ game-trash{
 width: 50px;
 height:auto;
 }
+#gameover {
+    background:red;
+    visibility: hidden;
+}
