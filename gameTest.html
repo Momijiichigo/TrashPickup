@@ -7,14 +7,15 @@
   <img src="img/paper_ball.png" id="plastic">
   -->
 <link rel="stylesheet" type="text/css" href="gameTest.css">
-score:<div id = "displayScore"></div>
-</div>
+Score:<div id = "displayScore"></div>
+Lives:<div id = "displayLives"></div>
 
 <script src="js/lib.js"></script>
 
 <script>
 let trashArray = [];
 let displayScore = document.getElementById("displayScore");
+let displayLives = document.getElementById("displayLives");
 var score = 0;
 var lives = 3;
 let testObj=document.getElementById("trashCan");
@@ -95,6 +96,7 @@ function draw() {
   move();
   incrementScore();
   displayScore.innerText = score;
+  displayLives.innerText = lives;
   window.requestAnimationFrame(draw);
 }
 
@@ -107,6 +109,7 @@ let move = () =>{
     TrashCan.x+=5;
 
   }
+
   if(testObj.x>innerWidth)testObj.x=innerWidth;
   if(testObj.x<0)testObj.x=0;
   testObj.style.left=TrashCan.x+"px";
