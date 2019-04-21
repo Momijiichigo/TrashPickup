@@ -73,8 +73,8 @@ let TrashCan = {
 
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
-    if (trashArray[a].y > TrashCan.y){
-      if (Math.abs(trash[a].x - TrashCan.x) < 500){
+    if (Math.abs(trashArray[a].y - TrashCan.y) < 3){
+      if (Math.abs(trashArray[a].x - TrashCan.x) < 500){
         score += 1;
       }
       else {
