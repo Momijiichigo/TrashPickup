@@ -5,7 +5,7 @@
 <img src="img/paper_ball.png" id="plastic">
 -->
 <link rel="stylesheet" type="text/css" href="gameTest.css">
-<div id = "displayScore"></div>
+score:<div id = "displayScore"></div>
 </div>
 <script src="js/lib.js"></script>
 <script>
@@ -66,7 +66,7 @@ let TrashCan = {
 
 function incrementScore(){
   for(let a=0;a<trash.length;a++){
-    if (trash[a].y < TrashCan.y){
+    if (trash[a].y > TrashCan.y){
       if (Math.abs(trash[a].x - TrashCan.x) < 100){
         score += 1;
       }
@@ -80,7 +80,7 @@ function incrementScore(){
   }
 }
 let gameOver = () =>{
-  
+
 }
 window.requestAnimationFrame(draw);
 function draw() {
