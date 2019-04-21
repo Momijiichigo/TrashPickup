@@ -1,1 +1,14 @@
- 
+<img src="PinClipart.com_garbage-clipart_127706.png" id="test">
+<script>
+let x=100,y=100;
+let testObj=document.getElementById("test");
+testObj.style.position="absolute"
+
+//move HTML obj to (x,y)
+if(KeyIsDown("ArrowLeft")){
+    testObj.style.left = -2 +"px";
+}
+if(KeyIsDown("ArrowRight")){
+    testObj.style.left = 2 +"px";
+}
+</script>
