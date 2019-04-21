@@ -40,7 +40,7 @@ customElements.define('game-trash',
         this.img.setAttribute('width', '100px');
 
         this.y=0;
-        this.x= Math.random()*600;
+        this.x= Math.random()*1000;
         this.style.position="absolute";
         this.style.left= this.x +"px";
         this.style.top="0px";
@@ -82,6 +82,7 @@ let TrashCan = {
 
 function incrementScore(){
   for(let a=0;a < trashArray.length;a++){
+    //console.log(trashArray[a])
     if (Math.abs(trashArray[a].y - TrashCan.y) < 3){
       console.log(trashArray)
       if (Math.abs(trashArray[a].x - TrashCan.x) < 100){
