@@ -42,4 +42,3 @@ let move=()=>{
   testObj.style.left=Trash.x+"px";
   testObj.style.top=Trash.y+"px";
 }
-
