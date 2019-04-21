@@ -29,14 +29,14 @@ let move=()=>{
   }
   if(KeyIsDown("ArrowRight")){
 
-<<<<<<< HEAD
+
   //TrashCan
   ctx.drawImage(trashCan, 300, 550);
   
 
   window.requestAnimationFrame(draw);
-=======
+
   }
->>>>>>> af8e9ae74148dc437a48f564e0b5806c67ee68a1
+
 }
 
