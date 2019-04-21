@@ -10,21 +10,39 @@
 
 let testObj=document.getElementById("trashCan");
 testObj.style.position="absolute"
-class Trash extends HTMLImageElement {
-  constructor(x,type){
-    this.style.position="absolute";
-    this.style.left=x+"px";
-    this.style.top="0px";
-    if (typeNum == 1){
-      this.type = "Paper";
-      this.src="img/paper_ball.png";
-    } else if (typeNum == 2){
-      this.type = "Styrofoam";
-    } else if (typeNum == 3){
-      this.type = "Plastic";
+
+customElements.define('game-trash',
+  class extends HTMLElement {
+    constructor() {
+      super();
     }
-  }
-}
+    connectedCallback(){
+        this.img = document.createElement("img");
+        this.y=0;
+        this.style.position="absolute";
+        this.style.left=(Math.random()*600)+"px";
+        this.style.top="0px";
+        this.typeNum = Math.ceil(Math.random()*3);
+        if (this.typeNum == 1){
+        this.type = "Paper";
+        this.img.src="img/paper_ball.png";
+        } else if (this.typeNum == 2){
+        this.type = "Styrofoam";
+        } else if (this.typeNum == 3){
+        this.type = "Plastic";
+        }
+        this.appendChild(this.img);
+        requestAnimationFrame(() => {
+                this.draw(this);
+        });
+    }
+    draw(self){
+        self.y+=5;
+        self.style.top=self.y+"px";
+        requestAnimationFrame(()=>{self.draw(self)});
+    }
+    
+})
 
 let TrashCan = {
   x: 300,
@@ -59,7 +77,7 @@ let move = () =>{
   testObj.style.top=TrashCan.y+"px";
 }
 let produceTrash = () =>{
-    document.appendChild(new Trash(Math.random()*600,Math.ceil(Math.random()*3)));
+    document.body.appendChild(document.createElement("game-trash"));
 }
 
 </script>
