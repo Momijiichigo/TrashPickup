@@ -1,20 +1,27 @@
 <html>
-
-  <img src="img/trash.png" id="trashCan" height= "20" width="42">
-  <!--
-  <img src="img/paper_ball.png" id="styrofoam">
-  <img src="img/paper_ball.png" id="paper">
-  <img src="img/paper_ball.png" id="plastic">
-  -->
+  <head>
 <link rel="stylesheet" type="text/css" href="gameTest.css">
-score:<div id = "displayScore"></div>
-</div>
+</head>
+<body>
+
+    <div id="gameover">
+      GAME OVER
+      <button id="restart" onclick="javascript:restart()">restart</button>
+    </div>
+    <img src="img/trash.png" id="trashCan" height= "20" width="42">
+Score:<div id = "displayScore"></div>
+Lives:<div id = "displayLives"></div>
 
 <script src="js/lib.js"></script>
 
 <script>
+  let restart = ()=>{
+    location.href='gameTest.html';
+  }
+  let gameoverPopUp = document.getElementById("gameover");
 let trashArray = [];
 let displayScore = document.getElementById("displayScore");
+let displayLives = document.getElementById("displayLives");
 var score = 0;
 var lives = 3;
 let testObj=document.getElementById("trashCan");
@@ -27,13 +34,15 @@ customElements.define('game-trash',
     }
     connectedCallback(){
         this.class="trash";
+        this.speed=1;
         this.img = document.createElement("img");
         this.img.setAttribute('height', '100px');
         this.img.setAttribute('width', '100px');
 
         this.y=0;
+        this.x= Math.random()*1000;
         this.style.position="absolute";
-        this.style.left=(Math.random()*600)+"px";
+        this.style.left= this.x +"px";
         this.style.top="0px";
         this.typeNum = Math.ceil(Math.random()*3);
         if (this.typeNum == 1){
@@ -54,10 +63,11 @@ customElements.define('game-trash',
     }
     draw(self){
         if(self.y>innerHeight){
-          document.body.removeChild(self);
-          trash.shift();
+          if(trashArray.length>1){trashArray.shift();document.body.removeChild(self);}
+          
         }
-        self.y+=5;
+        self.y+=this.speed;
+        self.speed+=0.5;
         self.style.top=self.y+"px";
         requestAnimationFrame(()=>{self.draw(self)});
     }
@@ -79,6 +89,8 @@ function incrementScore(){
       else {
         lives -=1;
       }
+      document.body.removeChild(trashArray[a]);
+      trashArray.shift();
     }
     if (lives == 0){
       gameOver();
@@ -95,13 +107,14 @@ function draw() {
   move();
   incrementScore();
   displayScore.innerText = score;
+  displayLives.innerText = lives;
   window.requestAnimationFrame(draw);
 }
 
 let move = () =>{
   if(KeyIsDown("ArrowLeft")&&testObj.x>0){
     //do something
-    TrashCan.x-=5;
+    TrashCan.x-=10;
   }
   if(KeyIsDown("ArrowRight")&&testObj.x<innerWidth){
     TrashCan.x+=5;
@@ -115,6 +128,10 @@ let produceTrash = () =>{
 }
 </script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+</body>
+>>>>>>> 416f530448a4aa4bc7935678f31364b0aca084aa
 </html>
 >>>>>>> 649a0fac1472efa6567b168aa2717004c0710d69
