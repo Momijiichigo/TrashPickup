@@ -22,6 +22,7 @@ customElements.define('game-trash',
       super();
     }
     connectedCallback(){
+        this.class="trash";
         this.img = document.createElement("img");
         this.y=0;
         this.style.position="absolute";
@@ -37,11 +38,13 @@ customElements.define('game-trash',
         this.type = "Plastic";
         }
         this.appendChild(this.img);
+        //document.body.appendChild(this);
         requestAnimationFrame(() => {
                 this.draw(this);
         });
     }
     draw(self){
+        if(self.y>innerHeight)document.body.removeChild(self);
         self.y+=5;
         self.style.top=self.y+"px";
         requestAnimationFrame(()=>{self.draw(self)});
