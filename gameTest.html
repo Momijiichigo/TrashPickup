@@ -17,11 +17,10 @@ function draw() {
 let move=()=>{
   if(KeyIsDown("ArrowLeft")){
     //do something
-    Trash.x-=1;
-    console.log("left")
+    Trash.x-=5;
   }
   if(KeyIsDown("ArrowRight")){
-    Trash.x+=1;
+    Trash.x+=5;
   }
   testObj.style.left=Trash.x+"px";
   testObj.style.top=Trash.y+"px";
