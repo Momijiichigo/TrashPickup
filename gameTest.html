@@ -2,7 +2,7 @@
   <head>
 <link rel="stylesheet" type="text/css" href="gameTest.css">
 </head>
-<body>
+<body background="img/gameBackground.jpg">
 
     <div id="gameover">
       GAME OVER
@@ -63,7 +63,7 @@ customElements.define('game-trash',
     }
     draw(self){
         if(self.y>innerHeight){
-          if(trashArray.length>1){trashArray.shift();document.body.removeChild(self);}
+          if(trashArray.length>1){trashArray.shift();}
           
         }
         self.y+=this.speed;
