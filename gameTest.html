@@ -6,17 +6,30 @@
 
     <div id="gameover">
       GAME OVER
-      <button id="restart" onclick="javascript:restart()">restart</button>
+      <button id="restart" onclick="javascript:restart()" style="
+        width: 150px;
+        font-family: 'Bungee Inline', cursive;
+        font-size: 45px;
+        color: yellow;
+        padding: 10px;
+        border: none;
+        background-color: black;
+        padding: 10px 5px;
+        font-size: 27px;
+        cursor: pointer;
+        display: inline-bl
+      ">problem from trash</button>
     </div>
     <img src="img/trash.png" id="trashCan" height= "20" width="42">
-Score:<div id = "displayScore"></div>
-Lives:<div id = "displayLives"></div>
-
+  <div style="font-size: 300%;color:brown;">
+    Score:<div id = "displayScore"></div>
+    Lives:<div id = "displayLives"></div>
+  </div>
 <script src="js/lib.js"></script>
 
 <script>
   let restart = ()=>{
-    location.href='gameTest.html';
+    location.href='TrashPickup.html';
   }
   let gameoverPopUp = document.getElementById("gameover");
 let trashArray = [];
@@ -122,10 +135,10 @@ function draw() {
 let move = () =>{
   if(KeyIsDown("ArrowLeft")&&testObj.x>0){
     //do something
-    TrashCan.x-=10;
+    TrashCan.x-=15;
   }
   if(KeyIsDown("ArrowRight") && testObj.x < 1900){
-    TrashCan.x+=10;
+    TrashCan.x+=15;
   }
   testObj.style.left=TrashCan.x+"px";
   testObj.style.top=TrashCan.y+"px";
