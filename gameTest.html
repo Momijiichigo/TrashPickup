@@ -1,0 +1,65 @@
+<img src="img/trash.png" id="trashCan">
+<!--
+<img src="img/paper_ball.png" id="styrofoam">
+<img src="img/paper_ball.png" id="paper">
+<img src="img/paper_ball.png" id="plastic">
+-->
+<link rel="stylesheet" type="text/css" href="gameTest.css">
+<script src="js/lib.js"></script>
+<script>
+
+let testObj=document.getElementById("trashCan");
+testObj.style.position="absolute"
+class Trash extends HTMLImageElement {
+  constructor(x,type){
+    this.style.position="absolute";
+    this.style.left=x+"px";
+    this.style.top="0px";
+    if (typeNum == 1){
+      this.type = "Paper";
+      this.src="img/paper_ball.png";
+    } else if (typeNum == 2){
+      this.type = "Styrofoam";
+    } else if (typeNum == 3){
+      this.type = "Plastic";
+    }
+  }
+}
+
+let TrashCan = {
+  x: 300,
+  y: innerHeight-100
+}
+
+/*
+let PaperBall = {
+  x: Math.random() * 600,
+  y: 0
+}
+*/
+
+window.requestAnimationFrame(draw);
+function draw() {
+  move();
+
+  window.requestAnimationFrame(draw);
+}
+
+let move = () =>{
+  if(KeyIsDown("ArrowLeft")){
+    //do something
+    
+    TrashCan.x-=5;
+  }
+  if(KeyIsDown("ArrowRight")){
+    TrashCan.x+=5;
+
+  }
+  testObj.style.left=TrashCan.x+"px";
+  testObj.style.top=TrashCan.y+"px";
+}
+let produceTrash = () =>{
+    document.appendChild(new Trash(Math.random()*600,Math.ceil(Math.random()*3)));
+}
+
+</script>

@@ -3,24 +3,20 @@ var input_key_buffer = new Array();
 
 
 document.addEventListener("keydown",function (e){
-	if(!e) e = window.event; // レガシー
-
-	input_key_buffer[e.keyCode] = true;
+	input_key_buffer[e.key] = true;
 });
 
 document.addEventListener("keyup",function (e){
-	if(!e) e = window.event; // レガシー
-
-	input_key_buffer[e.keyCode] = false;
+	input_key_buffer[e.key] = false;
 });
 
 window.onblur = function (){
 	input_key_buffer.length = 0;
 };
 
-function KeyIsDown(key_code){
+function KeyIsDown(key){
 
-	if(input_key_buffer[key_code])	return true;
+	if(input_key_buffer[key])	return true;
 
 	return false;
 }
