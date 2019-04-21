@@ -4,8 +4,9 @@ var earth = new Image();
 var trashCan = new Image();
 let Trash = {
   x: 0,
-  y: 
+  y: 0
 }
+
 function init() {
   sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
   moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';

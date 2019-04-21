@@ -1,25 +1,36 @@
-<<<<<<< HEAD
-<img src="img/trash.png" id="trash">
-<img src= "img/paper_ball.png" id="paper">
-
-=======
 <img src="img/trash.png" id="test">
+<img src="img/paper_ball.png" id="paper">
 <link rel="stylesheet" type="text/css" href="gameTest.css">
->>>>>>> 0f04787e9fea65883cd6385163b782bd8ed6c598
 <script src="js/lib.js"></script>
 <script>
 
 let testObj=document.getElementById("trash");
 testObj.style.position="absolute"
-let Trash = {
-<<<<<<< HEAD
-  x: 0,
-  y: innerHeight-500
-=======
+class Trash {
+  constructor(){
+    this.x = Math.random()*600;
+    this.y = 0;
+    typeNum = Math.ceil(Math.random()*3);
+    if (typeNum == 1){
+      this.type = "Paper";
+    } else if (typeNum == 2){
+      this.type = "Styrofoam";
+    } else if (typeNum == 3){
+      this.type = "Plastic";
+    }
+  }
+}
+
+let TrashCan = {
   x: 300,
   y: innerHeight-100
->>>>>>> 0f04787e9fea65883cd6385163b782bd8ed6c598
 }
+/*
+let PaperBall = {
+  x: Math.random() * 600,
+  y: 0
+}
+*/
 window.requestAnimationFrame(draw);
 function draw() {
   move();
