@@ -1,10 +1,29 @@
 <img src="PinClipart.com_garbage-clipart_127706.png" id="test">
 <script>
-let x=100,y=100;
+
 let testObj=document.getElementById("test");
 testObj.style.position="absolute"
+let Trash = {
+  x: 0,
+  y: 0
+}
 
-//move HTML obj to (x,y)
-testObj.style.left=x+"px";
-testObj.style.top=y+"px";
+function draw() {
+  move();
+  window.requestAnimationFrame(draw);
+}
+
+let move=()=>{
+  if(KeyIsDown("ArrowLeft")){
+    //do something
+    Trash.x-=1;
+
+  }
+  if(KeyIsDown("ArrowRight")){
+    Trash.x+=1;
+  }
+  testObj.style.left=Trash.x+"px";
+  testObj.style.top=Trash.y+"px";
+}
+
 </script>
