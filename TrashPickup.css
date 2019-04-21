@@ -1,0 +1,24 @@
+
+#cat{
+position:relative;
+    width:20%;
+    height:50%;
+}
+
+#bird{
+position:relative;
+    width:20%;
+    height:50%;
+}
+
+#turtle{
+    position:relative;
+    width:20%;
+    height:50%;
+}
+#plastic{
+   
+    right:500px;
+    width:20%;
+    height:50%;
+}
