@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "description": "game",
   "main": "index.js",
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "target" : "AppImage"
+  },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
