@@ -54,7 +54,7 @@ customElements.define('game-trash',
         self.style.top=self.y+"px";
         requestAnimationFrame(()=>{self.draw(self)});
     }
-    
+
 })
 let dropTrash = setInterval(function(){
   produceTrash();
@@ -80,6 +80,7 @@ function incrementScore(){
   }
 }
 let gameOver = () =>{
+
 
 }
 window.requestAnimationFrame(draw);
